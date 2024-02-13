@@ -1,17 +1,20 @@
 body {
   height: 100%;
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
   padding: 0;
   font-family: "Arial", sans-serif;
 }
-//Navbar----------------
+
+// Navbar--------------
 nav {
-  position: sticky;
-  menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  z-index: 100;
+
+  & menu {
     ul {
       list-style-type: none;
       padding: 1.5px;
@@ -24,13 +27,137 @@ nav {
         display: inline;
         margin: 10px;
 
-        .link {
+        & .link {
           text-decoration: none;
           font-weight: bold;
+          color: white;
         }
       }
     }
   }
 }
 
-//Home----------------
+// Home-----------
+.parallax-container {
+  position: relative;
+  height: 50vh;
+  width: 100vw;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  background-attachment: fixed;
+
+  & img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-attachment: fixed;
+  }
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  & .content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+
+    & .logo {
+      margin-top: -10px;
+      width: 30vw;
+    }
+  }
+}
+// Sections-----
+.text-img-section {
+  display: flex;
+  padding: 3rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid white;
+  margin-top: 24px;
+}
+.text-img-section > div {
+  display: flex;
+  align-items: center;
+  max-width: 1180px;
+  margin: auto;
+}
+.text-img-section:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.text-img-section:nth-child(2) {
+  background-color: lightgray;
+}
+
+.text-img-ultimatesection {
+  background-color: lightgray;
+  padding: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+.img-body {
+  width: 50%; /* Regola la larghezza dell'immagine, puoi modificare il valore a tuo piacimento */
+  height: auto;
+  overflow: hidden; /* Assicura che l'immagine non sfori fuori dal suo contenitore */
+  margin: 0 auto; /* Centra l'immagine all'interno del suo contenitore */
+}
+
+/* Aggiungi una regola specifica per le immagini nel caso ne debbano essere rimpicciolite ulteriormente */
+.img-body img {
+  width: 100%; /* Rendi l'immagine larga al 100% del suo contenitore */
+  height: auto;
+  display: block; /* Rimuove lo spazio aggiunto alla base dell'immagine */
+}
+#ultimate-section {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.CreateCharater {
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+  margin-top: 25px;
+  font-size: 17px;
+}
+#ultimate-section .star-container {
+  background: url(./img/stars.svg) no-repeat center;
+  background-position: bottom;
+}
+/* Media Query per tablet */
+@media (max-width: 768px) {
+  .parallax-container {
+    height: 30vh; /* Altezza ridotta per tablet */
+  }
+
+  .section .content .logo {
+    width: 20vw; /* Rimpicciolito ulteriormente per tablet */
+  }
+}
+
+/* Media Query per mobile */
+@media (max-width: 480px) {
+  .parallax-container {
+    height: 20vh; /* Altezza ridotta per mobile */
+  }
+
+  .section .content .logo {
+    width: 15vw; /* Rimpicciolito ulteriormente per mobile */
+  }
+}

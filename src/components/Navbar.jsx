@@ -6,22 +6,22 @@ export default () => {
       <menu>
         <ul>
           <li>
-            <NavLink className="link" to="">
+            <NavLink className="link" to="/Characters">
               Personaggi
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/Home">
+            <NavLink className="link" to="/">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="">
+            <NavLink className="link" to="/Battles">
               Combatti
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="">
+            <NavLink className="link" to="/BattlesList">
               Lista Battaglie
             </NavLink>
           </li>
