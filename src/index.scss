@@ -56,8 +56,8 @@ nav {
 }
 
 .section {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100%;
 
@@ -74,11 +74,7 @@ nav {
 }
 // Sections-----
 .text-img-section {
-  display: flex;
   padding: 3rem;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
   border-bottom: 1px solid white;
   margin-top: 24px;
@@ -86,9 +82,7 @@ nav {
 .text-img-section > div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   max-width: 1180px;
-  margin: auto;
 }
 .text-img-section:nth-child(odd) {
   flex-direction: row-reverse;
@@ -133,7 +127,6 @@ nav {
   font-size: 17px;
 }
 #ultimate-section .star-container {
-  background: url(./img/stars.svg) no-repeat center;
   background-position: bottom;
 }
 
