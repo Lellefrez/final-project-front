@@ -1,5 +1,4 @@
 body {
-  height: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,21 +7,18 @@ body {
 
 // Navbar--------------
 nav {
-  position: fixed;
-  top: 0;
+  position: sticky;
   width: 100%;
   background-color: #333;
   z-index: 100;
-
+  padding-bottom: 0.2rem;
   & menu {
     ul {
       list-style-type: none;
       padding: 1.5px;
       display: flex;
       justify-content: space-around;
-      margin: 0;
       margin-right: 30px;
-
       li {
         display: inline;
         margin: 10px;
@@ -42,7 +38,6 @@ nav {
   position: relative;
   height: 50vh;
   width: 100vw;
-  overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
@@ -91,6 +86,7 @@ nav {
 .text-img-section > div {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: 1180px;
   margin: auto;
 }
@@ -108,10 +104,10 @@ nav {
   align-items: center;
 }
 .img-body {
-  width: 50%; /* Regola la larghezza dell'immagine, puoi modificare il valore a tuo piacimento */
+  width: 80%; /* Regola la larghezza dell'immagine, puoi modificare il valore a tuo piacimento */
   height: auto;
   overflow: hidden; /* Assicura che l'immagine non sfori fuori dal suo contenitore */
-  margin: 0 auto; /* Centra l'immagine all'interno del suo contenitore */
+  /* Centra l'immagine all'interno del suo contenitore */
 }
 
 /* Aggiungi una regola specifica per le immagini nel caso ne debbano essere rimpicciolite ulteriormente */
@@ -140,24 +136,11 @@ nav {
   background: url(./img/stars.svg) no-repeat center;
   background-position: bottom;
 }
-/* Media Query per tablet */
-@media (max-width: 768px) {
-  .parallax-container {
-    height: 30vh; /* Altezza ridotta per tablet */
-  }
 
-  .section .content .logo {
-    width: 20vw; /* Rimpicciolito ulteriormente per tablet */
-  }
-}
-
-/* Media Query per mobile */
-@media (max-width: 480px) {
-  .parallax-container {
-    height: 20vh; /* Altezza ridotta per mobile */
-  }
-
-  .section .content .logo {
-    width: 15vw; /* Rimpicciolito ulteriormente per mobile */
-  }
+//Characters-------------
+.character {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }

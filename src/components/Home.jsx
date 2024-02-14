@@ -1,4 +1,3 @@
-import React from "react";
 import backgroundImg from "../assets/3teopCharaters..jpeg";
 import LogoImg from "../assets/Universal-Combats-12-2-2024.jpg";
 import SectionImg1 from "../assets/all-charter.jpeg";
@@ -18,9 +17,9 @@ export default () => {
       </section>
       {/* MAIN SECTIONS */}
       <article id="main-section">
-        <section class="text-img-section">
+        <section className="text-img-section">
           <div>
-            <div class="img-body">
+            <div className="img-body">
               <img src={SectionImg1} alt="Multi Characters" />
             </div>
             <div>
@@ -34,7 +33,7 @@ export default () => {
             </div>
           </div>
         </section>
-        <section class="text-img-section">
+        <section className="text-img-section">
           <div>
             <div>
               <h2>Ritrova alcuni scenari epici</h2>
@@ -44,15 +43,15 @@ export default () => {
                 darti.
               </p>
             </div>
-            <div class="img-body">
+            <div className="img-body">
               <img src={SectionImg2} alt="Nameck" />
             </div>
           </div>
         </section>
 
-        <section class="text-img-section">
+        <section className="text-img-section">
           <div>
-            <div class="img-body">
+            <div className="img-body">
               <img src={SectionImg3} alt="Battles" />
             </div>
             <div>
@@ -65,7 +64,7 @@ export default () => {
           </div>
         </section>
 
-        <section id="ultimate-section" class="text-img-ultimatesection">
+        <section id="ultimate-section" className="text-img-ultimatesection">
           <div>
             <h2>UN SITO CHE TI PERMETTE DI DARE VITA ALLA TUA IMMAGINAZIONE</h2>
             <p>
@@ -77,12 +76,13 @@ export default () => {
           <div>
             <img src={SectionImg4} alt="Boruto Rasengan" />
           </div>
-          <div class="star-container">
-            <h2 class="star-text">Pronto a iniziare la tua avventura?</h2>
+          <div className="star-container">
+            <h2 className="star-text">Pronto a iniziare la tua avventura?</h2>
           </div>
-          <button class="CreateCharater">Crea il Tuo Personaggio</button>
+          <button className="CreateCharater">Crea il Tuo Personaggio</button>
         </section>
       </article>
     </>
   );
 };
+// FOOTER-----------
