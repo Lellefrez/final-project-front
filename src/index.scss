@@ -3,15 +3,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Arial", sans-serif;
+  background-color: #1a1a1a; /* Sfondo scuro */
+  color: #fff; /* Testo bianco */
 }
 
-// Navbar--------------
+/* Navbar-------------- */
 nav {
   position: sticky;
+  top: 0;
   width: 100%;
   background-color: #333;
   z-index: 100;
   padding-bottom: 0.2rem;
+  text-align: center;
+  line-height: 30px;
+  height: 50px;
   & menu {
     ul {
       list-style-type: none;
@@ -33,14 +39,14 @@ nav {
   }
 }
 
-// Home-----------
+/* Home----------- */
 .parallax-container {
   position: relative;
   height: 50vh;
   width: 100vw;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
+  background-size: 179%;
+  background-position: right 10% bottom 71%;
   background-attachment: fixed;
 
   & img {
@@ -56,7 +62,7 @@ nav {
 }
 
 .section {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -67,70 +73,87 @@ nav {
     z-index: 1;
 
     & .logo {
-      margin-top: -10px;
-      width: 30vw;
+      margin-top: -30px;
+      width: 15vw;
     }
   }
 }
-// Sections-----
+
+/* Sections----- */
 .text-img-section {
   padding: 3rem;
   gap: 1rem;
-  border-bottom: 1px solid white;
-  margin-top: 24px;
+  border-bottom: 1px solid #007acc;
+  background-color: #333;
 }
+
 .text-img-section > div {
   display: flex;
   align-items: center;
-  max-width: 1180px;
+  gap: 1rem;
+}
+.text-img-section .content {
+  padding: 0 20px; /* Aggiunto padding a sinistra e destra */
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+  z-index: 1;
+
+  & .logo {
+    margin-top: -10px;
+    width: 30vw;
+  }
 }
 .text-img-section:nth-child(odd) {
   flex-direction: row-reverse;
 }
+
 .text-img-section:nth-child(2) {
-  background-color: lightgray;
+  background-color: #444; /* Sfondo più scuro */
 }
 
 .text-img-ultimatesection {
-  background-color: lightgray;
+  background-color: #444; /* Sfondo più scuro */
   padding: 4rem;
   justify-content: center;
   align-items: center;
 }
+
 .img-body {
-  width: 80%; /* Regola la larghezza dell'immagine, puoi modificare il valore a tuo piacimento */
+  width: 80%;
   height: auto;
-  overflow: hidden; /* Assicura che l'immagine non sfori fuori dal suo contenitore */
-  /* Centra l'immagine all'interno del suo contenitore */
+  overflow: hidden;
 }
 
-/* Aggiungi una regola specifica per le immagini nel caso ne debbano essere rimpicciolite ulteriormente */
 .img-body img {
-  width: 100%; /* Rendi l'immagine larga al 100% del suo contenitore */
+  width: 50%;
   height: auto;
-  display: block; /* Rimuove lo spazio aggiunto alla base dell'immagine */
+  display: block;
 }
+
 #ultimate-section {
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
 .CreateCharater {
   border: none;
   outline: none;
   padding: 12px 15px;
   border-radius: 20px;
   cursor: pointer;
-  background-color: blue;
+  background-color: #007acc;
   color: white;
   margin-top: 25px;
   font-size: 17px;
 }
+
 #ultimate-section .star-container {
   background-position: bottom;
 }
 
-//Characters-------------
+/* Characters------------- */
 .character {
   display: flex;
   flex-direction: row;

@@ -7,8 +7,13 @@ import SectionImg4 from "../assets/https___hypebeast.com_image_2019_01_tw-boruto
 export default () => {
   return (
     <>
-      <div className="parallax-container">
-        <img className="background-img" src={backgroundImg} alt="" />
+      <div
+        className="parallax-container"
+        style={{
+          backgroundImage: `url(${backgroundImg})`,
+        }}
+      >
+        {/* <img className="background-img" src={backgroundImg} alt="" />  */}
       </div>
       <section className="section">
         <div className="content">
