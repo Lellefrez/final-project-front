@@ -16,7 +16,7 @@ export default () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="link" to="/Battles">
+            <NavLink className="link" to="/Battle">
               Combatti
             </NavLink>
           </li>
