@@ -1,5 +1,5 @@
 import backgroundImg from "../assets/3teopCharaters..jpeg";
-import LogoImg from "../assets/Universal-Combats-12-2-2024.jpg";
+import LogoImg from "../assets/Universal-Combats-nosfondo-removebg-preview.png";
 import SectionImg1 from "../assets/all-charter.jpeg";
 import SectionImg2 from "../assets/dfdoajv-0507a8c3-3647-4a41-bebf-c9878bed6fa5.jpeg";
 import SectionImg3 from "../assets/maxresdefault.jpeg";

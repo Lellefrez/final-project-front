@@ -13,14 +13,13 @@ export default () => {
   useEffect(() => {
     axios.get(`${VITE_BACKEND_URL}/characters`).then((res) => {
       console.log(res.data);
-
       setCharacters(res.data);
     });
   }, []);
   return (
-    <section className="characters-card">
+    <section className="card-container">
       {characters.map((character) => (
-        <div key={character._id} className="character">
+        <div key={character._id} className="character-card">
           <Link to={`charater/${character._id}`}>
             <figure>
               <img
