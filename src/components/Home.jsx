@@ -4,6 +4,7 @@ import SectionImg1 from "../assets/all-charter.jpeg";
 import SectionImg2 from "../assets/dfdoajv-0507a8c3-3647-4a41-bebf-c9878bed6fa5.jpeg";
 import SectionImg3 from "../assets/maxresdefault.jpeg";
 import SectionImg4 from "../assets/https___hypebeast.com_image_2019_01_tw-boruto-jump-force-roster-addition-gameplay-video.jpeg";
+import { Link } from "react-router-dom";
 export default () => {
   return (
     <>
@@ -27,7 +28,7 @@ export default () => {
             <div className="img-body">
               <img src={SectionImg1} alt="Multi Characters" />
             </div>
-            <div>
+            <div className="text-section">
               <h2>Crea un personaggio esistente o inventato</h2>
               <p>
                 In questo sito puoi creare un personaggio anime già esistente o
@@ -40,7 +41,7 @@ export default () => {
         </section>
         <section className="text-img-section">
           <div>
-            <div>
+            <div className="text-section">
               <h2>Ritrova alcuni scenari epici</h2>
               <p>
                 Divertiti a scegliere lo scenario della tua porossima battaglia
@@ -59,7 +60,7 @@ export default () => {
             <div className="img-body">
               <img src={SectionImg3} alt="Battles" />
             </div>
-            <div>
+            <div className="text-section">
               <h2>Combattimeti </h2>
               <p>
                 Inizia degli scontri epici con il persoaggio che preferisci. Dai
@@ -84,7 +85,10 @@ export default () => {
           <div className="star-container">
             <h2 className="star-text">Pronto a iniziare la tua avventura?</h2>
           </div>
-          <button className="CreateCharater">Crea il Tuo Personaggio</button>
+
+          <Link to={`/CreateCharacter`}>
+            <button className="CreateCharater">Crea il Tuo Personaggio</button>
+          </Link>
         </section>
       </article>
     </>

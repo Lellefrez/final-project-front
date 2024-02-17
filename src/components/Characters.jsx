@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import UmCh from "../assets/Um-Ch.jpeg";
 const { VITE_BACKEND_URL } = import.meta.env;
 
 export default () => {
@@ -16,14 +16,15 @@ export default () => {
       setCharacters(res.data);
     });
   }, []);
+
   return (
     <section className="card-container">
       {characters.map((character) => (
         <div key={character._id} className="character-card">
-          <Link to={`charater/${character._id}`}>
+          <Link to={`/${character._id}`}>
             <figure>
               <img
-                src={character.image}
+                src={character.image ?? UmCh}
                 alt="Impossibile Caricare L'immagine"
               />
             </figure>

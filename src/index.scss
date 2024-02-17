@@ -7,7 +7,8 @@ body {
   color: #fff;
 }
 
-/* Navbar-------------- */
+// Navbar--------------
+
 nav {
   position: sticky;
   top: 0;
@@ -39,14 +40,15 @@ nav {
   }
 }
 
-/* Home----------- */
+//Home-----------
+
 .parallax-container {
   position: relative;
-  height: 50vh;
+  height: 70vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-size: 179%;
-  background-position: right 10% bottom 71%;
+  background-position: right 10% bottom 78%;
   background-attachment: fixed;
 
   & img {
@@ -79,18 +81,24 @@ nav {
   }
 }
 
-/* Sections----- */
+// Sections-----
+
 .text-img-section {
   padding: 3rem;
   gap: 1rem;
   border-bottom: 1px solid #007acc;
   background-color: #333;
+  .text-section {
+    flex: 1;
+  }
 }
 
 .text-img-section > div {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 5rem;
+  margin: auto;
+  max-width: 1400px;
 }
 .text-img-section .content {
   padding: 0 20px; /* Aggiunto padding a sinistra e destra */
@@ -120,15 +128,11 @@ nav {
 }
 
 .img-body {
-  width: 80%;
-  height: auto;
-  overflow: hidden;
+  flex: 1;
 }
 
 .img-body img {
-  width: 50%;
-  height: auto;
-  display: block;
+  width: 600px;
 }
 
 #ultimate-section {
@@ -153,7 +157,8 @@ nav {
   background-position: bottom;
 }
 
-/* Characters------------- */
+// Characters-------------
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -180,6 +185,8 @@ nav {
 
   img {
     width: 100%;
+    height: 25vh;
+    object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease;
 
@@ -187,6 +194,17 @@ nav {
       transform: scale(1.1);
     }
   }
+}
+//characterPage-----------
+
+.singleCharater {
+  background: url("https://www.drcommodore.it/wp-content/uploads/2023/05/pxfuel.jpg")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
 }
 .character-container {
   max-width: 600px;
@@ -196,7 +214,8 @@ nav {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-
+  backdrop-filter: blur(30px);
+  background-color: transparent;
   h1 {
     color: #3498db;
     margin-bottom: 10px;
@@ -217,6 +236,188 @@ nav {
       b {
         color: #3498db;
       }
+    }
+    .button-page {
+      display: flex;
+      justify-content: space-around;
+      .DeleteCharater {
+        border: none;
+        outline: none;
+        padding: 12px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: #cc3600;
+        color: white;
+        margin-top: 25px;
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+//EditCharacter------
+
+.edit-character-page {
+  background: url("https://www.gamesoul.it/wp-content/uploads/2018/09/jump-force-collectors-edition-pre-order-season-pass-2-gamesoul.jpg")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 150px auto;
+  padding: 20px;
+  background-color: #333333;
+  border-radius: 8px;
+  backdrop-filter: blur(30px);
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  H2 {
+    color: #3498db;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    color: #fff;
+
+    h3 {
+      color: crimson;
+      transition: color 0.3s ease;
+    }
+
+    input {
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #444;
+      color: #fff;
+      outline: none;
+
+      &:focus {
+        border-color: #3498db;
+      }
+    }
+  }
+
+  .save-button {
+    border: none;
+    outline: none;
+    padding: 14px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #007acc;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #00578e;
+    }
+  }
+}
+
+.loading {
+  color: #3498db;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+// CreateCharater----------
+
+.create-character-page {
+  background: url("https://www.pockettactics.com/wp-content/sites/pockettactics/2023/06/Rage-of-Demon-King-tier-list.jpg")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+
+//BattleList------------
+
+.battlelist-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 20px;
+}
+
+.single-list {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+
+  h3 {
+    color: #3498db;
+  }
+
+  .character-first,
+  .character-second {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+
+    figure {
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-weight: bold;
+      color: #3498db;
     }
   }
 }
