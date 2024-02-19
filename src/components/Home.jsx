@@ -91,7 +91,21 @@ export default () => {
           </Link>
         </section>
       </article>
+      <footer>
+        <section className="section-end">
+          <div className="creazione">
+            <h4>Creato da:</h4>
+            <p>Frerzzato Manuel</p>
+          </div>
+          <div className="contattami">
+            <h4>Contattami:</h4>
+            <p>manuel.frezzato@gmail.com</p>
+          </div>
+          <div className="copyright">
+            <p> © 2024 MANUEL / FULL STACK </p>
+          </div>
+        </section>
+      </footer>
     </>
   );
 };
-// FOOTER-----------

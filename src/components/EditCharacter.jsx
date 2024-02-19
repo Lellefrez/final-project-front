@@ -3,7 +3,6 @@ const { VITE_BACKEND_URL } = import.meta.env;
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default () => {
@@ -53,13 +52,10 @@ export default () => {
       .then((res) => {
         setCharactersForm(res.data);
         setMessage("Personaggio aggiornato con successo");
-        navigate(`/characters`);
       })
       .catch((err) => setError(err))
       .finally(() => setIsSaving(false));
   };
-
-  const navigate = useNavigate();
 
   return (
     <>
@@ -68,7 +64,7 @@ export default () => {
       {!isLoading && !error && (
         <div className="edit-character-page">
           <form onSubmit={(e) => save(e)}>
-            <Link to="/characters">
+            <Link to="/characters" className="button-return-list">
               <button className="CreateCharater">Torna alla lista</button>
             </Link>
             <h2>MODIFICA IL PERSONAGGIO</h2>

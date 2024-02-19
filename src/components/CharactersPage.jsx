@@ -21,21 +21,6 @@ export default () => {
 
   const navigate = useNavigate();
 
-  /*
-  const deleteCharacter = (e) => {
-    const confirmed = confirm(
-      "Sei sicuro di voler eliminare questo Personaggio?"
-    );
-    if (confirmed) {
-      setError(null);
-      setIsSaving(true);
-      axios.delete(${VITE_BACKEND_URL}/characters/${id}).then((res) => {
-        navigate(/characters);
-      });
-    }
-  };
-  */
-
   return (
     <>
       {id === undefined && <Navigate to="/characters" />}

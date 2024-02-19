@@ -38,10 +38,10 @@ export default () => {
                 alt="Impossibile Caricare L'immagine"
               />
             </figure>
+            <p>
+              {battle?.characters[1]?.name} {battle?.characters[1]?.surname}
+            </p>
           </div>
-          <p>
-            {battle?.characters[1]?.name} {battle?.characters[1]?.surname}
-          </p>
           <h1>
             Vincitore:
             <figure>

@@ -60,7 +60,7 @@ export default () => {
       {!isLoading && !error && (
         <div className="create-character-page">
           <form onSubmit={(e) => save(e)}>
-            <Link to="/characters">
+            <Link to="/characters" className="button-return-list">
               <button className="CreateCharater">Torna alla lista</button>
             </Link>
             <h2>CREA IL TUO PERSONAGGIO</h2>
