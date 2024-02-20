@@ -8,7 +8,10 @@ import UmCh from "../assets/Um-Ch.jpeg";
 const { VITE_BACKEND_URL } = import.meta.env;
 
 export default () => {
+  const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState({});
+
   console.log(page);
   const { id } = useParams();
 
@@ -24,54 +27,58 @@ export default () => {
   return (
     <>
       {id === undefined && <Navigate to="/characters" />}
-      <div className="singleCharater">
-        <div className="character-container">
-          <Link to="/characters">
-            <button className="CreateCharater">Torna alla lista</button>
-          </Link>
-          <h1>
-            {page.name} {page.surname}
-          </h1>
-          <figure>
-            <img src={`${page.image ?? UmCh}`} alt="Immagine Profilo" />
-          </figure>
-          <section>
-            <p>
-              <b>Poteri:</b> {page.powers}
-            </p>
-            <p>
-              <b>Descrizione:</b> <br></br>
-              {page.description}
-            </p>
-            <p>
-              <b>Vittorie:</b> {page.victories}
-            </p>
-            <p>
-              <b>Sconfitte:</b> {page.defeats}
-            </p>
-            <div className="button-page">
-              <Link to={`/EditCharacter/${page._id}`}>
-                <button className="CreateCharater">Modifica</button>
-              </Link>
+      {isLoading && <span>Caricamento...</span>}
+      {error && <span>Errore caricamento : {error}</span>}
+      {!isLoading && !error && (
+        <div className="singleCharater">
+          <div className="character-container">
+            <Link to="/characters">
+              <button className="CreateCharater">Torna alla lista</button>
+            </Link>
+            <h1>
+              {page.name} {page.surname}
+            </h1>
+            <figure>
+              <img src={`${page.image ?? UmCh}`} alt="Immagine Profilo" />
+            </figure>
+            <section>
+              <p>
+                <b>Poteri:</b> {page.powers}
+              </p>
+              <p>
+                <b>Descrizione:</b> <br></br>
+                {page.description}
+              </p>
+              <p>
+                <b>Vittorie:</b> {page.victories}
+              </p>
+              <p>
+                <b>Sconfitte:</b> {page.defeats}
+              </p>
+              <div className="button-page">
+                <Link to={`/EditCharacter/${page._id}`}>
+                  <button className="CreateCharater">Modifica</button>
+                </Link>
 
-              <Link>
-                <button
-                  className="DeleteCharater"
-                  onClick={(e) => {
-                    axios
-                      .delete(`${VITE_BACKEND_URL}/characters/${id}`)
-                      .then((res) => {
-                        navigate(`/characters`);
-                      });
-                  }}
-                >
-                  Elimina
-                </button>
-              </Link>
-            </div>
-          </section>
+                <Link>
+                  <button
+                    className="DeleteCharater"
+                    onClick={(e) => {
+                      axios
+                        .delete(`${VITE_BACKEND_URL}/characters/${id}`)
+                        .then((res) => {
+                          navigate(`/characters`);
+                        });
+                    }}
+                  >
+                    Elimina
+                  </button>
+                </Link>
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

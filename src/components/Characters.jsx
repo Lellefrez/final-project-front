@@ -9,6 +9,8 @@ export default () => {
   console.log(VITE_BACKEND_URL);
 
   const [characters, setCharacters] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
 
   useEffect(() => {
     axios.get(`${VITE_BACKEND_URL}/characters`).then((res) => {
@@ -18,34 +20,42 @@ export default () => {
   }, []);
 
   return (
-    <div>
-      <div className="btn-container">
-        <Link to={`/CreateCharacter`}>
-          <button className="CreateCharater">Crea il Tuo Personaggio</button>
-        </Link>
-      </div>
-      <section className="card-container">
-        {characters.map((character) => (
-          <div key={character._id} className="character-card">
-            <Link to={`/${character._id}`}>
-              <figure>
-                <img
-                  src={
-                    character.image !== undefined && character.image !== ""
-                      ? character.image
-                      : UmCh
-                  }
-                  alt="Impossibile Caricare L'immagine"
-                />
-              </figure>
+    <>
+      {isLoading && <span>Caricamento...</span>}
+      {error && <span>Errore caricamento : {error}</span>}
+      {!isLoading && !error && (
+        <div>
+          <div className="btn-container">
+            <Link to={`/CreateCharacter`}>
+              <button className="CreateCharater">
+                Crea il Tuo Personaggio
+              </button>
             </Link>
-            <h3>
-              {character.name} {character.surname}
-            </h3>
-            <p>{character.universe}</p>
           </div>
-        ))}
-      </section>
-    </div>
+          <section className="card-container">
+            {characters.map((character) => (
+              <div key={character._id} className="character-card">
+                <Link to={`/${character._id}`}>
+                  <figure>
+                    <img
+                      src={
+                        character.image !== undefined && character.image !== ""
+                          ? character.image
+                          : UmCh
+                      }
+                      alt="Impossibile Caricare L'immagine"
+                    />
+                  </figure>
+                </Link>
+                <h3>
+                  {character.name} {character.surname}
+                </h3>
+                <p>{character.universe}</p>
+              </div>
+            ))}
+          </section>
+        </div>
+      )}
+    </>
   );
 };

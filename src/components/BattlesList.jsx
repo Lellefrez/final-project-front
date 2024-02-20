@@ -7,6 +7,8 @@ import UmCh from "../assets/Um-Ch.jpeg";
 export default () => {
   console.log(VITE_BACKEND_URL);
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
   const [battles, setBattles] = useState([]);
 
   useEffect(() => {
@@ -16,41 +18,47 @@ export default () => {
     });
   }, []);
   return (
-    <section className="battlelist-container">
-      {battles.map((battle) => (
-        <div key={battle._id} className="single-list">
-          <h3>Personaggi:</h3>
-          <div className="character-first">
-            <figure>
-              <img
-                src={battle?.characters[0]?.image ?? UmCh}
-                alt="Impossibile Caricare L'immagine"
-              />
-            </figure>
-            <p>
-              {battle?.characters[0]?.name} {battle?.characters[0]?.surname}
-            </p>
-          </div>
-          <div className="character-second">
-            <figure>
-              <img
-                src={battle?.characters[1]?.image ?? UmCh}
-                alt="Impossibile Caricare L'immagine"
-              />
-            </figure>
-            <p>
-              {battle?.characters[1]?.name} {battle?.characters[1]?.surname}
-            </p>
-          </div>
-          <h1>
-            Vincitore:
-            <figure>
-              <img src={battle?.winner?.image ?? UmCh} alt="" />
-            </figure>
-            {battle?.winner?.name} {battle?.winner?.surname}
-          </h1>
-        </div>
-      ))}
-    </section>
+    <>
+      {isLoading && <span>Caricamento...</span>}
+      {error && <span>Errore caricamento : {error}</span>}
+      {!isLoading && !error && (
+        <section className="battlelist-container">
+          {battles.map((battle) => (
+            <div key={battle._id} className="single-list">
+              <h3>Personaggi:</h3>
+              <div className="character-first">
+                <figure>
+                  <img
+                    src={battle?.characters[0]?.image ?? UmCh}
+                    alt="Impossibile Caricare L'immagine"
+                  />
+                </figure>
+                <p>
+                  {battle?.characters[0]?.name} {battle?.characters[0]?.surname}
+                </p>
+              </div>
+              <div className="character-second">
+                <figure>
+                  <img
+                    src={battle?.characters[1]?.image ?? UmCh}
+                    alt="Impossibile Caricare L'immagine"
+                  />
+                </figure>
+                <p>
+                  {battle?.characters[1]?.name} {battle?.characters[1]?.surname}
+                </p>
+              </div>
+              <h1>
+                Vincitore:
+                <figure>
+                  <img src={battle?.winner?.image ?? UmCh} alt="" />
+                </figure>
+                {battle?.winner?.name} {battle?.winner?.surname}
+              </h1>
+            </div>
+          ))}
+        </section>
+      )}
+    </>
   );
 };

@@ -468,6 +468,15 @@ form {
 }
 
 //Battle---------
+.create-battle-page {
+  background: url("https://static.vecteezy.com/ti/vettori-gratis/p3/6303932-tempesta-di-fulmini-con-sfondo-scuro-gratuito-vettoriale.jpg")
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
 .battle-container {
   display: flex;
   justify-content: space-around;
