@@ -44,7 +44,7 @@ export default () => {
             <div className="text-section">
               <h2>Ritrova alcuni scenari epici</h2>
               <p>
-                Divertiti a scegliere lo scenario della tua porossima battaglia
+                Divertiti a scegliere lo scenario della tua prossima battaglia
                 facendo riafiorare i ricordi che solo alcuni scenari possono
                 darti.
               </p>
