@@ -775,19 +775,25 @@ form {
       }
     }
   }
-  // Character Card
+  //character container
+  .character-container {
+    margin: 105px auto;
+  }
 
+  // Character Card
   .character-card img {
     height: 15vh;
   }
   .card-container {
     grid-template-columns: 1fr;
   }
+
   //Create Character
   .create-character-page {
     height: auto;
     padding: 20px;
   }
+
   // Battle
   .battle-container {
     margin-top: 10px;
