@@ -36,6 +36,23 @@ export default () => {
     e.preventDefault();
     setIsSaving(true);
 
+    // Verifica se tutti i campi obbligatori sono riempiti
+    const requiredFields = [
+      "name",
+      "surname",
+      "universe",
+      "powers",
+      "description",
+    ];
+    const areAllFieldsFilled = requiredFields.every(
+      (field) => charactersForm[field].trim() !== ""
+    );
+
+    if (!areAllFieldsFilled) {
+      setError("Compila tutti i campi obbligatori.");
+      setIsSaving(false);
+      return;
+    }
     axios
       .post(`${VITE_BACKEND_URL}/Characters`, charactersForm)
       .then((res) => {
@@ -113,7 +130,11 @@ export default () => {
                 onChange={(e) => changeData("description", e.target.value)}
               />
             </label>
-            <button type="submit" className="save-button">
+            <button
+              type="submit"
+              className="save-button"
+              disabled={isSaving || isLoading}
+            >
               Salva
             </button>
             {message && <span>{message}</span>}

@@ -30,7 +30,11 @@ export default () => {
             <Link to={`/${character._id}`}>
               <figure>
                 <img
-                  src={character.image ?? UmCh}
+                  src={
+                    character.image !== undefined && character.image !== ""
+                      ? character.image
+                      : UmCh
+                  }
                   alt="Impossibile Caricare L'immagine"
                 />
               </figure>
