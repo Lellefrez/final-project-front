@@ -85,7 +85,28 @@ export default () => {
           )}
         </section>
         <div>
-          <button onClick={handleBattle}>Combatti</button>
+          <button
+            onClick={handleBattle}
+            disabled={
+              !selectedCharacterG1 ||
+              !selectedCharacterG2 ||
+              selectedCharacterG1 === selectedCharacterG2
+            }
+            className={
+              selectedCharacterG1 &&
+              selectedCharacterG2 &&
+              selectedCharacterG1 !== selectedCharacterG2
+                ? ""
+                : "disabled"
+            }
+          >
+            Combatti
+            {(!selectedCharacterG1 ||
+              !selectedCharacterG2 ||
+              selectedCharacterG1 === selectedCharacterG2) && (
+              <span className="icon">&#10060;</span>
+            )}
+          </button>
         </div>
         <section className="G2">
           <h2>G2</h2>

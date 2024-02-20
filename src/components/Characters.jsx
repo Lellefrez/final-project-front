@@ -18,23 +18,30 @@ export default () => {
   }, []);
 
   return (
-    <section className="card-container">
-      {characters.map((character) => (
-        <div key={character._id} className="character-card">
-          <Link to={`/${character._id}`}>
-            <figure>
-              <img
-                src={character.image ?? UmCh}
-                alt="Impossibile Caricare L'immagine"
-              />
-            </figure>
-          </Link>
-          <h3>
-            {character.name} {character.surname}
-          </h3>
-          <p>{character.universe}</p>
-        </div>
-      ))}
-    </section>
+    <div>
+      <div className="btn-container">
+        <Link to={`/CreateCharacter`}>
+          <button className="CreateCharater">Crea il Tuo Personaggio</button>
+        </Link>
+      </div>
+      <section className="card-container">
+        {characters.map((character) => (
+          <div key={character._id} className="character-card">
+            <Link to={`/${character._id}`}>
+              <figure>
+                <img
+                  src={character.image ?? UmCh}
+                  alt="Impossibile Caricare L'immagine"
+                />
+              </figure>
+            </Link>
+            <h3>
+              {character.name} {character.surname}
+            </h3>
+            <p>{character.universe}</p>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
