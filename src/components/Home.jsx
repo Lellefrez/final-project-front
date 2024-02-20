@@ -63,8 +63,8 @@ export default () => {
             <div className="text-section">
               <h2>Combattimeti </h2>
               <p>
-                Inizia degli scontri epici con il persoaggio che preferisci. Dai
-                il via a degli 1 vs 1 che hai sempre sognato.
+                Inizia degli scontri epici con il personaggio che preferisci.
+                Dai il via a degli 1 vs 1 che hai sempre sognato.
               </p>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default () => {
         <section className="section-end">
           <div className="creazione">
             <h4>Creato da:</h4>
-            <p>Frerzzato Manuel</p>
+            <p>Frezzato Manuel</p>
           </div>
           <div className="contattami">
             <h4>Contattami:</h4>
