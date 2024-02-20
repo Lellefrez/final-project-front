@@ -656,11 +656,13 @@ form {
   .card-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
   //Create Character
   .create-character-page {
     height: auto;
     padding: 20px;
   }
+
   // Battle
   .battle-container {
     flex-direction: column;
