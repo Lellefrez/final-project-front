@@ -735,7 +735,10 @@ form {
       }
     }
   }
-
+  .img-body img {
+    max-width: 100%;
+    height: auto;
+  }
   .text-img-section .content {
     & .logo {
       width: 80vw;
@@ -773,6 +776,11 @@ form {
   }
   .card-container {
     grid-template-columns: 1fr;
+  }
+  //Create Character
+  .create-character-page {
+    height: auto;
+    padding: 20px;
   }
   // Battle
   .battle-container {
