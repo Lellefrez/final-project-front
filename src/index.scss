@@ -50,7 +50,6 @@ nav {
 //Home-----------
 
 .parallax-container {
-  position: relative;
   height: 70vh;
   width: 100vw;
   background-repeat: no-repeat;
@@ -605,6 +604,7 @@ form {
     background-position: center;
     display: flex;
     flex-direction: column;
+    height: 50vh;
   }
 
   .section {
