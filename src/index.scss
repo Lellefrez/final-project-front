@@ -797,11 +797,13 @@ form {
 
   //Create Character
   .create-character-page {
-    height: 140vh;
+    height: auto;
+    padding: 20px;
   }
   //Edit Character
   .edit-character-page {
-    height: 140vh;
+    height: auto;
+    padding: 20px;
   }
 
   // Battle
