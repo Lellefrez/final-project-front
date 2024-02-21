@@ -578,6 +578,13 @@ form {
   }
 }
 // Media query per tablet
+@media (max-width: 1400px) {
+  .create-character-page {
+    height: 130vh;
+  }
+}
+
+// Media query per tablet
 @media (max-width: 1100px) {
   // Navbar
   nav {
@@ -792,6 +799,10 @@ form {
   .create-character-page {
     height: auto;
     padding: 20px;
+  }
+  //Edit Character
+  .edit-character-page {
+    height: 140vh;
   }
 
   // Battle
