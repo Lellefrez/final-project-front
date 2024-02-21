@@ -579,8 +579,22 @@ form {
 }
 // Media query per tablet
 @media (max-width: 1400px) {
+  //Create Character
   .create-character-page {
-    height: 130vh;
+    height: auto;
+    padding: 20px;
+  }
+  //Single character
+
+  .single-character {
+    height: auto;
+    padding: 20px;
+  }
+
+  //Edit Character
+  .edit-character-page {
+    height: auto;
+    padding: 20px;
   }
 }
 
