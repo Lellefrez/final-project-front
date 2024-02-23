@@ -10,13 +10,14 @@ export default () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
+  //Chiamata personaggi
   useEffect(() => {
     axios.get(`${VITE_BACKEND_URL}/characters`).then((res) => {
       console.log(res.data);
       setCharacters(res.data);
     });
   }, []);
-
+  //prendiamo gli id in quanto la chiamata ha bisogno di quelli per funzionare e non dei nomi
   const handleOnChangeG1 = (e) => {
     const selectedCharacter = characters.find(
       (character) => character._id === e.target.value
@@ -32,7 +33,7 @@ export default () => {
     setSelectedCharacterG2(selectedCharacter);
     setWinner(null);
   };
-
+  // Aggiungiamo entrambi gli id dei personaggi alla battaglia
   const handleBattle = async () => {
     if (selectedCharacterG1 && selectedCharacterG2) {
       try {
@@ -40,6 +41,7 @@ export default () => {
           selectedCharacterG1._id,
           selectedCharacterG2._id,
         ];
+        //Chiamata battaglie
         await axios
           .post(`${VITE_BACKEND_URL}/Battles`, { characters: charactersArray })
           .then((res) => {
@@ -48,6 +50,7 @@ export default () => {
             );
             setWinner(winner);
             console.log("il vincitore è ", winner.name);
+            //rimuovere i personaggi selezionati in precedenza negli input
             setSelectedCharacterG1(null);
             setSelectedCharacterG2(null);
           });

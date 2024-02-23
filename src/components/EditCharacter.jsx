@@ -70,7 +70,6 @@ export default () => {
             <h2>MODIFICA IL PERSONAGGIO</h2>
             <label>
               <h3>Url Immagine</h3>
-
               <input
                 type="url"
                 value={charactersForm.image}
